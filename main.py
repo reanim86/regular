@@ -1,7 +1,9 @@
 from pprint import pprint
 import csv
 import re
+from logging import logger
 
+@logger(path='fix_name.log')
 def fix_name(list_contact):
     """
     Функция записывает Фамили, Имя и Отчетсво в соотв. поля/столбцы
@@ -26,6 +28,7 @@ def fix_name(list_contact):
         n += 1
     return list_contact
 
+@logger(path='fix_tel.log')
 def fix_tel(list_tel):
     """
     Функция заменяет телефонные номера на требуемый формат +7(999)999-99-99 доб.9999
@@ -49,7 +52,7 @@ def fix_tel(list_tel):
     return list_tel
 
 
-
+@logger(path='fix_data.log')
 def fix_data(list_to_fix):
     """
     Функция объеденяет все дублирующие записи и удаляет лишние
